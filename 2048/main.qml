@@ -28,7 +28,7 @@ Window {
                 id: mainboardRepeater
                 model: columnTotal * rowTotal
                 Rectangle {
-                    color: "#eee4da"
+                    color: "#cdc0b4"
                     width: windowShow.width / columnTotal - mainboard.spacing
                     height: windowShow.height / rowTotal - mainboard.spacing
                     radius: 5
@@ -81,7 +81,7 @@ Window {
                     text: numInside
                     font.pixelSize: 70
                     font.bold: true
-                    color: "black"
+                    color: numInside <= 4 ? "black":"white"
                 }
                 transform: Scale {
                     id: zoomIn
