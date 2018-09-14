@@ -45,7 +45,20 @@ Window {
                 property int singleColumn: 0
                 property int singleRow: 0
                 property int numInside: Math.random() > 0.9 ? 4 : 2
-                color: "#eee4da"
+                color: numInside <=    1 ? "transparent" :
+                       numInside <=    2 ? "#eee4da" :
+                       numInside <=    4 ? "#ede0c8" :
+                       numInside <=    8 ? "#f2b179" :
+                       numInside <=   16 ? "#f59563" :
+                       numInside <=   32 ? "#f67c5f" :
+                       numInside <=   64 ? "#f65e3b" :
+                       numInside <=  128 ? "#edcf72" :
+                       numInside <=  256 ? "#edcc61" :
+                       numInside <=  512 ? "#edc850" :
+                       numInside <= 1024 ? "#edc53f" :
+                       numInside <= 2048 ? "#edc22e" :
+                                        "#3c3a32"
+
                 function moveOneRect(col,row) {
                     if (col == singleColumn && row == singleRow)
                         return false
@@ -68,7 +81,7 @@ Window {
                     text: numInside
                     font.pixelSize: 70
                     font.bold: true
-                    color: numInside <= 1 ? "transparent" :numInside <= 2 ? "black" : numInside <=  4 ? "blue" : "black"
+                    color: "black"
                 }
                 transform: Scale {
                     id: zoomIn
